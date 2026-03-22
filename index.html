@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barcelona Trip — May 2026</title>
+    <meta
+      name="description"
+      content="Barcelona May 2026: itinerary, interactive map, highlights, and day-by-day plan (EN/RU)."
+    />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="bg__glow bg__glow--a"></div>
+      <div class="bg__glow bg__glow--b"></div>
+      <div class="bg__glow bg__glow--c"></div>
+      <div class="bg__grain" aria-hidden="true"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">
+          <div class="brand__mark" aria-hidden="true">BCN</div>
+          <div class="brand__text">
+            <div class="brand__title" id="tripTitle">Barcelona</div>
+            <div class="brand__subtitle" id="tripSubtitle">May 2026 · Poble-sec base</div>
+          </div>
+        </div>
+
+        <div class="topbar__actions">
+          <button class="btn btn--ghost" id="langToggle" type="button" aria-label="Toggle language">
+            EN / RU
+          </button>
+          <a class="btn btn--primary" href="#itinerary">Itinerary</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <div class="kicker" id="tripDates">May 2–9 • 8 days</div>
+            <h1 class="hero__title" id="heroTitle">Barcelona</h1>
+            <p class="hero__lead" id="heroLead">
+              Architecture, sea air, Passeig de Gràcia, and slow Catalan evenings — eight days in the city and by the water.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#map">See the route</a>
+              <a class="btn btn--ghost" href="#highlights">Highlights</a>
+            </div>
+
+            <div class="stats" id="stats"></div>
+          </div>
+
+          <div class="hero__panel" aria-label="Trip highlights collage">
+            <div class="collage">
+              <div class="tile tile--big">
+                <div class="tile__label" id="tileA">Passeig nights</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label" id="tileB">Gaudí icons</div>
+              </div>
+              <div class="tile">
+                <div class="tile__label" id="tileC">Sea & tapas</div>
+              </div>
+              <div class="tile tile--wide">
+                <div class="tile__label" id="tileD">Markets & paella</div>
+              </div>
+            </div>
+            <div class="note" id="note"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="map">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" id="mapTitle">Where everything is</h2>
+            <p class="section__subtitle" id="mapSubtitle">
+              Interactive map with the route and key stops. Click pins to jump to the day plan.
+            </p>
+          </div>
+          <div class="mapCard">
+            <div class="mapCard__map" id="leafletMap" role="application" aria-label="Trip map"></div>
+            <div class="mapCard__legend" id="mapLegend"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="highlights">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" id="highlightsTitle">The “wow” moments</h2>
+            <p class="section__subtitle" id="highlightsSubtitle">
+              A short list of emotional peaks — the kind that makes you smile even months later.
+            </p>
+          </div>
+          <div class="grid3" id="highlightsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="itinerary">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" id="itineraryTitle">Day-by-day plan</h2>
+            <p class="section__subtitle" id="itinerarySubtitle">
+              Simple, readable cards. Each day has a base zone + key stops + “why it’s worth it”.
+            </p>
+          </div>
+          <div class="days" id="days"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" id="tipsTitle">Trip-friendly tips</h2>
+            <p class="section__subtitle" id="tipsSubtitle">Practical stuff that makes the week smoother.</p>
+          </div>
+          <div class="grid2" id="tipsGrid"></div>
+        </div>
+      </section>
+
+      <section class="footer">
+        <div class="container footer__inner">
+          <div class="footer__left">
+            <div class="footer__title" id="footerTitle">Barcelona Trip</div>
+            <div class="footer__meta" id="footerMeta">Open in any browser. Works best with internet (map tiles).</div>
+          </div>
+          <div class="footer__right">
+            <a class="btn btn--ghost" href="#top" id="backToTop">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
